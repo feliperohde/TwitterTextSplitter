@@ -1,0 +1,122 @@
+
+.App {
+  zoom: 1;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #29c5f9;
+  height: 150px;
+  padding: 20px;
+
+  color: white;
+  text-align: center;
+}
+
+.App-body {
+  padding: 20px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-body > .App-textInput {
+  min-height: 6rem;
+  max-width: 30rem;
+  margin: auto;
+  display: block;
+
+  font-size: 1rem;
+}
+
+.App-textInput {
+  width: 100%;
+
+  resize: none;
+
+  border: solid 1px rgba(42,182,288, .7);
+  border-radius: 5px;
+  box-shadow: 0 0 50px rgba(0,0,0,.2);
+
+  padding: 20px;
+
+  line-height: 1.2;
+  font-family: sans-serif;
+}
+
+.App-twitterButton {
+  display:block;
+  width: 100%;
+
+  background: none;
+  appearance: none;
+
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.App-twitterList {
+  background: #293542;
+
+  margin-left:-20px;
+  margin-right:-20px;
+
+  padding:20px;
+
+  margin: 20px auto;
+  max-width: 30rem;
+
+  list-style: none;
+
+  border-radius: 5px;
+}
+
+.App-twitterItem {
+  color: white;
+}
+
+.App-twitterItem .App-textInput {
+  cursor: pointer;
+}
+
+.App-twitterItem.is-copied {
+  position: relative;
+}
+
+.App-twitterItem.is-copied:after {
+  position: absolute;
+  width: 90%;
+  height: 40px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: #29c5f9;
+
+  content: "Texto copiado :)";
+  color: #293542;
+  text-align: center;
+  line-height: 40px;
+
+  border-radius: 5px;
+
+  display: block;
+
+}
+
+.App-twitterItem:last-child {
+  margin: 20px auto;
+}
