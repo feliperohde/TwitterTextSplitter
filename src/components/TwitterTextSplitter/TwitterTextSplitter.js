@@ -62,7 +62,7 @@ class TwitterTextSplitter extends Component {
   measureTweets(text) {
 
     let re = new RegExp(".{1," + this.arms.twitterCharsLimit + "}", 'g')
-    let itensWithoutCounter = text.match(re)
+    let itensWithoutCounter = text.replace(/(\r\n|\n|\r)/gm," ").match(re)
     let stringSum = ""
 
     if(!itensWithoutCounter) return []
@@ -71,7 +71,7 @@ class TwitterTextSplitter extends Component {
       stringSum = stringSum + this.createCounter(idx, itensWithoutCounter.length).toString()
     }.bind(this))
 
-    let charsNeeded = stringSum + this.state.fullString
+    let charsNeeded = (stringSum + this.state.fullString).replace(/(\r\n|\n|\r)/gm," ")
 
     return (charsNeeded.match(re).length > itensWithoutCounter.length) ? this.measureTweets(charsNeeded) : charsNeeded.match(re)
 
