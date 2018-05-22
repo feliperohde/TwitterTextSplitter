@@ -38,7 +38,7 @@ class TwitterTextSplitter extends Component {
       end = (this.arms.twitterCharsLimit - counter.length) + (this.arms.twitterCharsLimit * idx)
       end = (idx === 0) ? end : lastEnd + this.arms.twitterCharsLimit - counter.length
 
-      let currText = this.state.fullString.slice(start, end)
+      let currText = this.state.fullString.replace(/(\r\n|\n|\r)/gm," ").slice(start, end)
 
       twittsList.push({
         id: idx,
